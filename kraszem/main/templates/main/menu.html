@@ -1,0 +1,6 @@
+<ul>
+    {% for items in menu %}
+    <li><a href="{% url items.url_name %}">{{items.title}}</a></li>
+    {% endfor %}
+</ul>
+

@@ -1,0 +1,22 @@
+{% extends 'main/template.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+<h1>Главная страница</h1>
+
+
+
+
+<ul>
+{% for th_cottage in cottages %}
+    <li>
+        <h2>{{ th_cottage.title }}</h2>
+        <div>{{ th_cottage.description|truncatewords:1 }}</div>
+        <div><a href="{{ th_cottage.get_absolute_url }}">{{th_cottage.title}}</a></div>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
